@@ -85,7 +85,13 @@
       text-align: center;
       padding: 20px;
     }
-    a { color: var(--link-color); }
+    a {
+      color: var(--link-color);
+      transition: transform 0.2s;
+    }
+    a:hover {
+      transform: scale(1.05);
+    }
     @media (min-width: 600px) {
       .skill-list, .project-list {
         grid-template-columns: repeat(2, 1fr);
@@ -170,6 +176,23 @@
   <p>📞 Telepon: <a href="tel:+6281271583453">+62 812 7158 3453</a></p>
   <p>✉️ Email: <a href="mailto:ahmadaris437@gmail.com">ahmadaris437@gmail.com</a></p>
   <p>🔗 LinkedIn: <a href="#">linkedin.com/in/ahmadaristama</a></p>
+
+  <!-- Tombol WA dan CV -->
+  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
+    <!-- WhatsApp -->
+    <a href="https://wa.me/6281271583453" target="_blank"
+       style="display: flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WA" width="20" height="20">
+      WhatsApp Saya
+    </a>
+
+    <!-- Download CV -->
+    <a href="CV_Ahmad_Aristama.pdf" download
+       style="display: flex; align-items: center; gap: 10px; background: #007BFF; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+      <img src="https://cdn-icons-png.flaticon.com/24/337/337946.png" alt="PDF" width="20" height="20">
+      Unduh CV (PDF)
+    </a>
+  </div>
 </section>
 
 <footer>
