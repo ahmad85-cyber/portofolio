@@ -2,105 +2,98 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <title>Ahmad Aristama - IT Support</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad Aristama - IT Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg-color: #f4f4f4;
-      --text-color: #333;
-      --header-bg: #1a1a1a;
-      --nav-bg: #333;
-      --card-bg: white;
-      --link-color: #1a73e8;
+      --primary: #0D47A1;
+      --secondary: #1976D2;
+      --light: #f5f7fa;
+      --dark: #121212;
+      --text: #333;
     }
-    body.dark {
-      --bg-color: #121212;
-      --text-color: #e0e0e0;
-      --header-bg: #1f1f1f;
-      --nav-bg: #2c2c2c;
-      --card-bg: #1e1e1e;
-      --link-color: #90caf9;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      background: var(--bg-color);
-      color: var(--text-color);
-      transition: background 0.3s, color 0.3s;
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
     }
     header {
-      background: var(--header-bg);
+      background: var(--primary);
       color: white;
-      padding: 40px 20px;
+      padding: 3rem 1rem;
       text-align: center;
-      position: relative;
     }
-    .theme-toggle {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: #444;
-      color: white;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      border-radius: 5px;
-    }
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2rem; }
     nav {
-      background: var(--nav-bg);
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
     nav a {
-      color: white;
-      padding: 14px 20px;
       text-decoration: none;
-      display: block;
-    }
-    nav a:hover {
-      background: #444;
+      color: var(--primary);
+      font-weight: 600;
     }
     section {
-      padding: 40px 20px;
-      max-width: 1000px;
+      padding: 3rem 1rem;
+      max-width: 900px;
       margin: auto;
     }
     h2 {
-      margin-bottom: 20px;
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
     }
-    .skill-list, .project-list {
+    .grid {
       display: grid;
-      gap: 20px;
+      gap: 1.5rem;
     }
-    .skill-item, .project-item {
-      background: var(--card-bg);
-      padding: 20px;
+    .skill, .card {
+      background: white;
       border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
     }
-    footer {
-      background: var(--header-bg);
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
       color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn-whatsapp { background: #25D366; }
+    .btn-cv { background: #0D47A1; }
+    footer {
       text-align: center;
-      padding: 20px;
-    }
-    a {
-      color: var(--link-color);
-      transition: transform 0.2s;
-    }
-    a:hover {
-      transform: scale(1.05);
+      padding: 2rem 1rem;
+      background: #eceff1;
+      margin-top: 2rem;
     }
     @media (min-width: 600px) {
-      .skill-list, .project-list {
-        grid-template-columns: repeat(2, 1fr);
-      }
+      .grid.skills { grid-template-columns: repeat(2, 1fr); }
+      .grid.cards { grid-template-columns: repeat(2, 1fr); }
     }
     @media (min-width: 900px) {
-      .skill-list, .project-list {
-        grid-template-columns: repeat(3, 1fr);
-      }
+      .grid.skills, .grid.cards { grid-template-columns: repeat(3, 1fr); }
     }
   </style>
 </head>
@@ -109,7 +102,6 @@
 <header>
   <h1>Ahmad Aristama</h1>
   <p>IT Support Specialist | Network Technician | On-Site Engineer</p>
-  <button class="theme-toggle" onclick="toggleTheme()">🌙 Dark Mode</button>
 </header>
 
 <nav>
@@ -121,91 +113,68 @@
 </nav>
 
 <section id="tentang">
-  <h2>Profil</h2>
-  <p>Profesional IT Support dengan pengalaman lebih dari 7 tahun dalam mendukung infrastruktur jaringan, instalasi perangkat, dan troubleshooting sistem IT. Berpengalaman dalam konfigurasi perangkat Mikrotik & Cisco, instalasi fiber optic, serta pelayanan teknis on-site. Terbiasa bekerja secara tim maupun individu dengan orientasi solusi dan efisiensi kerja.</p>
+  <h2>Tentang Saya</h2>
+  <p>Profesional IT Support dengan pengalaman lebih dari 7 tahun menangani infrastruktur jaringan, troubleshooting perangkat, dan instalasi layanan internet. Ahli dalam konfigurasi Mikrotik dan Cisco, serta dokumentasi teknis dan pemeliharaan sistem IT.</p>
 </section>
 
 <section id="keahlian">
   <h2>Keahlian</h2>
-  <div class="skill-list">
-    <div class="skill-item">Instalasi & konfigurasi jaringan LAN & Fiber Optic</div>
-    <div class="skill-item">Troubleshooting jaringan & perangkat on-site</div>
-    <div class="skill-item">Routing, switching dasar & monitoring jaringan</div>
-    <div class="skill-item">Mikrotik (NAT, DHCP, Bridge, VLAN)</div>
-    <div class="skill-item">Cisco Router Configuration</div>
-    <div class="skill-item">Access Point, Modem, Network Devices</div>
-    <div class="skill-item">Windows & Linux System Admin (dasar)</div>
-    <div class="skill-item">Helpdesk & remote troubleshooting</div>
-    <div class="skill-item">TeamViewer, Remote Desktop, Winbox</div>
-    <div class="skill-item">Dokumentasi teknis & laporan pemeliharaan</div>
+  <div class="grid skills">
+    <div class="skill">Jaringan LAN & Fiber Optic</div>
+    <div class="skill">Konfigurasi Mikrotik & Cisco</div>
+    <div class="skill">Troubleshooting Hardware/Software</div>
+    <div class="skill">Helpdesk & Remote Support</div>
+    <div class="skill">Monitoring Server & Jaringan</div>
+    <div class="skill">Dokumentasi & Laporan Teknis</div>
   </div>
 </section>
 
 <section id="pengalaman">
-  <h2>Pengalaman Kerja</h2>
-  <div class="project-list">
-    <div class="project-item">
-      <h3>IT Support – Jala Lintas Media (2023–sekarang)</h3>
-      <p>Engineering on-site untuk Apartemen Paradiso, instalasi layanan internet fiber optic, troubleshooting perangkat & jaringan langsung di lokasi.</p>
+  <h2>Pengalaman</h2>
+  <div class="grid cards">
+    <div class="card">
+      <h3>IT Support - Jala Lintas Media (2023–Sekarang)</h3>
+      <p>Engineering on-site untuk Apartemen Paradiso. Instalasi internet fiber optic, pemeliharaan perangkat, dan penanganan gangguan jaringan.</p>
     </div>
-    <div class="project-item">
-      <h3>IT Support – PT. Proxis Sahabat Indonesia (2016–2022)</h3>
-      <p>Konfigurasi jaringan kantor, router Mikrotik & Cisco, serta troubleshooting layanan jaringan pengguna internal.</p>
+    <div class="card">
+      <h3>IT Support - PT Proxis Sahabat Indonesia (2016–2022)</h3>
+      <p>Konfigurasi jaringan kantor, Mikrotik Router, IP management, serta troubleshooting jaringan antar divisi dan kantor cabang.</p>
     </div>
-    <div class="project-item">
-      <h3>Staf Tata Usaha – SMK Negeri 1 Liwa (2022–2023)</h3>
-      <p>Menangani administrasi siswa, sarana prasarana sekolah, serta komunikasi eksternal sebagai humas.</p>
+    <div class="card">
+      <h3>Staf Tata Usaha - SMK Negeri 1 Liwa (2022–2023)</h3>
+      <p>Pengelolaan administrasi sarana, arsip data siswa, serta hubungan komunikasi eksternal sekolah.</p>
     </div>
   </div>
 </section>
 
 <section id="sertifikasi">
   <h2>Sertifikasi</h2>
-  <div class="project-list">
-    <div class="project-item">
-      <h3>Omada Certified Network Administrator (OCNA)</h3>
-      <p>Diterbitkan oleh TP-Link Indonesia – 24 Januari 2025<br>
-      Instalasi, manajemen, dan konfigurasi sistem jaringan menggunakan Omada Controller, Access Point, dan Managed Switch.</p>
-    </div>
+  <div class="card">
+    <h3>Omada Certified Network Administrator (OCNA)</h3>
+    <p>TP-Link Indonesia – 24 Januari 2025<br>Instalasi, manajemen, dan konfigurasi jaringan dengan Omada Controller & Access Point.</p>
   </div>
 </section>
 
 <section id="kontak">
   <h2>Kontak</h2>
-  <p>📍 Alamat: Jl. Pagelarangan No. 2, Jakarta Timur</p>
-  <p>📞 Telepon: <a href="tel:+6281271583453">+62 812 7158 3453</a></p>
-  <p>✉️ Email: <a href="mailto:ahmadaris437@gmail.com">ahmadaris437@gmail.com</a></p>
-  <p>🔗 LinkedIn: <a href="#">linkedin.com/in/ahmadaristama</a></p>
+  <p>📍 Jl. Pagelarangan No. 2, Jakarta Timur</p>
+  <p>📞 <a href="tel:+6281271583453">+62 812-7158-3453</a></p>
+  <p>📧 <a href="mailto:ahmadaris437@gmail.com">ahmadaris437@gmail.com</a></p>
+  <p>🔗 <a href="#">linkedin.com/in/ahmadaristama</a></p>
 
-  <!-- Tombol WA dan CV -->
-  <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 20px;">
-    <!-- WhatsApp -->
-    <a href="https://wa.me/6281271583453" target="_blank"
-       style="display: flex; align-items: center; gap: 10px; background: #25D366; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-      <img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" alt="WA" width="20" height="20">
-      WhatsApp Saya
+  <div class="contact-buttons">
+    <a href="https://wa.me/6281271583453" class="btn btn-whatsapp" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" width="20"> WhatsApp Saya
     </a>
-
-    <!-- Download CV -->
-    <a href="CV_Ahmad_Aristama.pdf" download
-       style="display: flex; align-items: center; gap: 10px; background: #007BFF; color: white; padding: 12px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-      <img src="https://cdn-icons-png.flaticon.com/24/337/337946.png" alt="PDF" width="20" height="20">
-      Unduh CV (PDF)
+    <a href="CV_Ahmad_Aristama.pdf" class="btn btn-cv" download>
+      <img src="https://cdn-icons-png.flaticon.com/24/337/337946.png" width="20"> Unduh CV PDF
     </a>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Ahmad Aristama - IT Support Specialist</p>
+  <p>© 2025 Ahmad Aristama - Dibuat dengan ❤️ & GitHub Pages</p>
 </footer>
-
-<script>
-  function toggleTheme() {
-    document.body.classList.toggle('dark');
-    const btn = document.querySelector('.theme-toggle');
-    btn.textContent = document.body.classList.contains('dark') ? '☀️ Light Mode' : '🌙 Dark Mode';
-  }
-</script>
 
 </body>
 </html>
