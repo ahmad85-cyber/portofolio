@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmad Aristama - IT Support</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0D47A1;
+      --secondary: #1976D2;
+      --light: #f5f7fa;
+      --dark: #121212;
+      --text: #333;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.2rem; }
+    nav {
+      background: white;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--primary);
+      font-weight: 600;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 1.8rem;
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+    .grid {
+      display: grid;
+      gap: 1.5rem;
+    }
+    .skill, .card {
+      background: white;
+      border-radius: 8px;
+      padding: 1rem;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+    }
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.25rem;
+      border-radius: 6px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn-whatsapp { background: #25D366; }
+    .btn-cv { background: #0D47A1; }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #eceff1;
+      margin-top: 2rem;
+    }
+    @media (min-width: 600px) {
+      .grid.skills { grid-template-columns: repeat(2, 1fr); }
+      .grid.cards { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 900px) {
+      .grid.skills, .grid.cards { grid-template-columns: repeat(3, 1fr); }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Ahmad Aristama</h1>
+  <p>IT Support Specialist | Network Technician | On-Site Engineer</p>
+</header>
+
+<nav>
+  <a href="#tentang">Tentang</a>
+  <a href="#keahlian">Keahlian</a>
+  <a href="#pengalaman">Pengalaman</a>
+  <a href="#sertifikasi">Sertifikasi</a>
+  <a href="#kontak">Kontak</a>
+</nav>
+
+<section id="tentang">
+  <h2>Tentang Saya</h2>
+  <p>Profesional IT Support dengan pengalaman lebih dari 7 tahun menangani infrastruktur jaringan, troubleshooting perangkat, dan instalasi layanan internet. Ahli dalam konfigurasi Mikrotik dan Cisco, serta dokumentasi teknis dan pemeliharaan sistem IT.</p>
+</section>
+
+<section id="keahlian">
+  <h2>Keahlian</h2>
+  <div class="grid skills">
+    <div class="skill">Jaringan LAN & Fiber Optic</div>
+    <div class="skill">Konfigurasi Mikrotik & Cisco</div>
+    <div class="skill">Troubleshooting Hardware/Software</div>
+    <div class="skill">Helpdesk & Remote Support</div>
+    <div class="skill">Monitoring Server & Jaringan</div>
+    <div class="skill">Dokumentasi & Laporan Teknis</div>
+  </div>
+</section>
+
+<section id="pengalaman">
+  <h2>Pengalaman</h2>
+  <div class="grid cards">
+    <div class="card">
+      <h3>IT Support - Jala Lintas Media (2023–Sekarang)</h3>
+      <p>Engineering on-site untuk Apartemen Paradiso. Instalasi internet fiber optic, pemeliharaan perangkat, dan penanganan gangguan jaringan.</p>
+    </div>
+    <div class="card">
+      <h3>IT Support - PT Proxis Sahabat Indonesia (2016–2022)</h3>
+      <p>Konfigurasi jaringan kantor, Mikrotik Router, IP management, serta troubleshooting jaringan antar divisi dan kantor cabang.</p>
+    </div>
+    <div class="card">
+      <h3>Staf Tata Usaha - SMK Negeri 1 Liwa (2022–2023)</h3>
+      <p>Pengelolaan administrasi sarana, arsip data siswa, serta hubungan komunikasi eksternal sekolah.</p>
+    </div>
+  </div>
+</section>
+
+<section id="sertifikasi">
+  <h2>Sertifikasi</h2>
+  <div class="card">
+    <h3>Omada Certified Network Administrator (OCNA)</h3>
+    <p>TP-Link Indonesia – 24 Januari 2025<br>Instalasi, manajemen, dan konfigurasi jaringan dengan Omada Controller & Access Point.</p>
+  </div>
+</section>
+
+<section id="kontak">
+  <h2>Kontak</h2>
+  <p>📍 Jl. Pagelarangan No. 2, Jakarta Timur</p>
+  <p>📞 <a href="tel:+6281271583453">+62 812-7158-3453</a></p>
+  <p>📧 <a href="mailto:ahmadaris437@gmail.com">ahmadaris437@gmail.com</a></p>
+  <p>🔗 <a href="#">linkedin.com/in/ahmadaristama</a></p>
+
+  <div class="contact-buttons">
+    <a href="https://wa.me/6281271583453" class="btn btn-whatsapp" target="_blank">
+      <img src="https://cdn-icons-png.flaticon.com/24/733/733585.png" width="20"> WhatsApp Saya
+    </a>
+    <a href="CV_Ahmad_Aristama.pdf" class="btn btn-cv" download>
+      <img src="https://cdn-icons-png.flaticon.com/24/337/337946.png" width="20"> Unduh CV PDF
+    </a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2025 Ahmad Aristama - Dibuat dengan ❤️ & GitHub Pages</p>
+</footer>
+
+</body>
+</html>
